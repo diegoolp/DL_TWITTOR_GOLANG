@@ -13,7 +13,7 @@ import (
 var Email string
 
 /*IDUsuario es el ID devuelto del modelo, que se usara en todos los EndPoints */
-var IDUsario string
+var IDUsuario string
 
 /*ProcesoToken proceso token para extraer sus valores*/
 func ProcesoToken(tk string) (*models.Claim, bool, string, error) {
@@ -34,9 +34,9 @@ func ProcesoToken(tk string) (*models.Claim, bool, string, error) {
 		_, encontrado, _ := bd.ChequeoYaExisteUsuario(claims.Email)
 		if encontrado {
 			Email = claims.Email
-			IDUsario = claims.ID.Hex()
+			IDUsuario = claims.ID.Hex()
 		}
-		return claims, encontrado, IDUsario, nil
+		return claims, encontrado, IDUsuario, nil
 	}
 
 	if !tkn.Valid {

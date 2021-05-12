@@ -20,7 +20,7 @@ func GraboTweet(w http.ResponseWriter, r *http.Request) {
 	}
 
 	registro := models.GraboTweet{
-		UserId:  IDUsario,
+		UserId:  IDUsuario,
 		Mensaje: mensaje.Mensaje,
 		Fecha:   time.Now(),
 	}
